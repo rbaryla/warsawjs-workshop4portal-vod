@@ -1,2 +1,13 @@
-<app-search [options]="[{id: 1}]"></app-search>
-<app-movies-list [items]="items | async"></app-movies-list>
+<div class="row">
+  <div class="col-3">
+    <app-search [filters]="moviesFilters" [options]="['name']"></app-search>
+    <hr>
+    <app-add-movie [newMovie]="newMovie"></app-add-movie>
+  </div>
+  <div class="col-9"><app-movies-list
+    [filters]="filters"
+    (removeEvent)="removeItem($event)"
+    [items]="items | async"></app-movies-list></div>
+</div>
+
+

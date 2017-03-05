@@ -1,1 +1,12 @@
-options: {{options|json}}
+<div class="card card-info mb-2 mt-2">
+  <div class="card-header">Search</div>
+  <div class="card-block">
+    <div class="form-group" *ngFor="let item of options">
+      <input type="text"
+             class="form-control"
+             [name]="item"
+             (input)="updateFilter($event.target)"
+             [placeholder]="item">
+    </div>
+  </div>
+</div>

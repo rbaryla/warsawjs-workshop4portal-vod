@@ -13,6 +13,9 @@ import { SearchComponent } from './components/search/search.component';
 import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "./utils/firebase-config";
 import { IframeComponent } from './components/iframe/iframe.component';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,16 @@ import { IframeComponent } from './components/iframe/iframe.component';
     MoviesComponent,
     MoviesListComponent,
     SearchComponent,
-    IframeComponent
+    IframeComponent,
+    AddMovieComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    NgbModule.forRoot(),
     RouterModule.forRoot(mainRouting)
   ],
   providers: [],

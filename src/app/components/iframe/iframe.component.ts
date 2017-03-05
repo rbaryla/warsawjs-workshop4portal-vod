@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-iframe',
@@ -7,8 +8,14 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class IframeComponent implements OnInit {
 
-  @Input() url:String;
-  constructor() { }
+  urlSrc: any;
+  @Input() set url(value){
+    this.urlSrc =
+      this.sanitizer.bypassSecurityTrustResourceUrl(value);
+  };
+  constructor(private sanitizer: DomSanitizer) {
+
+  }
 
   ngOnInit() {
   }
