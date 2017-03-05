@@ -4,15 +4,29 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {RouterModule} from "@angular/router";
+import { HomeComponent } from './components/home/home.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import {mainRouting} from "./main-routing";
+import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import { SearchComponent } from './components/search/search.component';
+import {AngularFireModule} from "angularfire2";
+import {firebaseConfig} from "./utils/firebase-config";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    MoviesComponent,
+    MoviesListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    RouterModule.forRoot(mainRouting)
   ],
   providers: [],
   bootstrap: [AppComponent]
