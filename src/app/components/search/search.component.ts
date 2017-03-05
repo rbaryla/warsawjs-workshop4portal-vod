@@ -8,7 +8,7 @@ import {Component, OnInit, Input} from '@angular/core';
 
 export class SearchComponent implements OnInit {
 
-  @Input() items: {}[];
+  @Input() options: {}[];
 
   constructor() { }
 

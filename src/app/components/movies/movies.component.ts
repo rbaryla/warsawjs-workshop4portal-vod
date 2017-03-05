@@ -12,9 +12,9 @@ export class MoviesComponent implements OnInit {
 
   constructor(private af: AngularFire) {
     this.items = af.database.list('/movies');
-    this.items.subscribe((response) => {
-        debugger;
-    })
+/*    this.items.subscribe((response) => {
+      debugger;
+    })*/
   }
 
   ngOnInit() {

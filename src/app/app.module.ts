@@ -12,6 +12,7 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { SearchComponent } from './components/search/search.component';
 import {AngularFireModule} from "angularfire2";
 import {firebaseConfig} from "./utils/firebase-config";
+import { IframeComponent } from './components/iframe/iframe.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {firebaseConfig} from "./utils/firebase-config";
     HomeComponent,
     MoviesComponent,
     MoviesListComponent,
-    SearchComponent
+    SearchComponent,
+    IframeComponent
   ],
   imports: [
     BrowserModule,
